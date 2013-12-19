@@ -150,6 +150,10 @@ public class CrazyZombyGLSurfaceView extends GLSurfaceView{
 	    	    msg.what = ControlCenter.LOADING_START;
 	    	    ControlCenter.mHandler.sendMessage(msg);
         	}
+            else if (ControlCenter.mScene == E_SCENARIO.RESULT)
+            {
+            	ControlCenter.mScene = E_SCENARIO.MENU;
+            }
 
         }
                 

@@ -91,6 +91,7 @@ public class ControlCenter {
 	int tryAgainTextureId;
 	
 	//game
+	int gameBackTextureId;
     int animalTextureId;				//动物素材纹理id
     int[] loadingTextureId = new int[10];			//加载动画素材纹理id
     int gridTextureId;				//网格素材纹理id
@@ -121,6 +122,7 @@ public class ControlCenter {
 	static public DrawMenu drawTryAgain;
     
     //game
+	static public DrawMenu drawGameBack; 
 	static public DrawAnimal drawAnimal;
 	static public DrawLoading drawLoading;
 	static public DrawGrid drawGrid;
@@ -832,6 +834,7 @@ public class ControlCenter {
 		tryAgainTextureId = initTexture(gl, R.drawable.tryagain);
 		
 		//game
+		gameBackTextureId = initTexture(gl, R.drawable.gameback);
     	animalTextureId = initTexture(gl, R.drawable.animal);	//初始化纹理对象    	
     	for(int i = 0; i < 10; i++)
     	{
@@ -866,6 +869,7 @@ public class ControlCenter {
     	controlRegister(drawMenuLifeModeTxt.control);
     	
     	//result
+    	controlRegister(drawGameBack.control);
     	controlRegister(drawResultScore.control);
     	controlRegister(drawTryAgain.control);
     	drawTryAgain.control.start();
@@ -902,6 +906,7 @@ public class ControlCenter {
 		
 		
 		//game
+		drawGameBack = new DrawMenu(gameBackTextureId, 3, 3, 480, 800, 1, E_TOUCHAREA.NONE);
     	drawAnimal = new DrawAnimal(animalTextureId);			//创建动物素材对象    	
     	drawGrid = new DrawGrid(gridTextureId);					//创建棋盘素材对象
     	drawFill = new DrawFill(drawAnimal);
@@ -1384,8 +1389,9 @@ public class ControlCenter {
 				}				                  
 			}
 		}
-    	drawGrid.draw(gl);
-		
+    	//drawGrid.draw(gl);
+    	drawGameBack.draw(gl);	
+    	drawGameBack.control.start();
 	}
 
     
