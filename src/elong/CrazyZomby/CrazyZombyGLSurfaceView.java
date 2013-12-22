@@ -88,10 +88,10 @@ public class CrazyZombyGLSurfaceView extends GLSurfaceView{
     { 
 
         public void onDrawFrame(GL10 gl) {  
-        	gl.glShadeModel(GL10.GL_SMOOTH);		//��ɫģʽΪƽ����ɫ
-        	gl.glClear(GL10.GL_COLOR_BUFFER_BIT|GL10.GL_DEPTH_BUFFER_BIT);//�����ɫ��������Ȼ�����
-        	gl.glMatrixMode(GL10.GL_MODELVIEW);		//���þ���Ϊģʽ����
-        	gl.glLoadIdentity();					//���õ�ǰ����Ϊ��λ����
+        	gl.glShadeModel(GL10.GL_SMOOTH);		//着色模式为平滑着色
+        	gl.glClear(GL10.GL_COLOR_BUFFER_BIT|GL10.GL_DEPTH_BUFFER_BIT);//清除颜色缓冲区及深度缓冲区
+        	gl.glMatrixMode(GL10.GL_MODELVIEW);		//设置矩阵为模式矩阵
+        	gl.glLoadIdentity();					//设置当前矩阵为单位矩阵
         	gl.glTranslatef(0f, 0f, -10f);			        	
         
         	if (ControlCenter.mScene == E_SCENARIO.GAME)

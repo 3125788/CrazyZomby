@@ -210,6 +210,11 @@ public class ControlCenter {
 		return mToken.takeToken();
 	}
 	
+	public static void resetToken()
+	{
+		mToken.resetToken();
+	}
+	
 	public static void freeToken(int token)
 	{
 		mToken.freeToken(token);
@@ -1148,6 +1153,7 @@ public class ControlCenter {
     					ctl.init(E_TIP.READYGO.ordinal());	//ready go
     					mTimer.start();
     					mLife.reset();
+    					resetToken();
     					break;
     				}
     				case DISAPPEAR_END:

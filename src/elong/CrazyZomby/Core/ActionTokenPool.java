@@ -38,6 +38,14 @@ public class ActionTokenPool {
 		return -1;
 	}
 	
+	synchronized void resetToken()
+	{
+		for(int i = 0; i < CrazyZombyConstent.MAX_TOKEN; i++)
+		{
+			mTokenInused[i] = false;
+		}		
+	}
+	
 	synchronized void freeToken(int token)
 	{
 		if(token >= 0 && token < CrazyZombyConstent.MAX_TOKEN) mTokenInused[token] = false;
